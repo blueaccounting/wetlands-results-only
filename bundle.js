@@ -61022,7 +61022,7 @@ function buildFilterDropdowns (ractive, filterID) {
     var getFilterInfo = ractive.get('appstate.filters.variables.dataquery.'+filterID);
     var filterInfo = $.extend({}, getFilterInfo);
     //var completeMarkers = ractive.get('inputData.imdsprojects.markers.complete._geojson.features');
-    var cartoDbTable = 'wetlands_1';
+    var cartoDbTable = 'wetlands_projects_jan182016';
     var uniqueArray;
     // console.log(filterInfo);
     // console.log(filterID);
@@ -61097,7 +61097,7 @@ function getThematicFilterChange (ractive) {
       var getFilterInfo = ractive.get('appstate.filters.variables.dataquery.'+filterID);
       var filterInfo = $.extend({}, getFilterInfo);
       //var completeMarkers = ractive.get('inputData.imdsprojects.markers.complete._geojson.features');
-      var cartoDbTable = 'wetlands_1';
+      var cartoDbTable = 'wetlands_projects_jan182016';
       var uniqueArray;
 
       // by setting selected filter into ractive, it's automatically rendered into the filter interface
@@ -62431,7 +62431,7 @@ module.exports = {
 }
 
 },{"lodash":17}],37:[function(require,module,exports){
-var projectsURL = 'https://dmajka.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM wetlands_1'; /* This query appears no longer to be an active part of the code */
+var projectsURL = 'https://dmajka.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM wetlands_projects_jan182016'; /* This query appears no longer to be an active part of the code */
 
 // var inputData = {
 //   projects: {
@@ -62447,7 +62447,7 @@ var projectsURL = 'https://dmajka.cartodb.com/api/v2/sql?format=GeoJSON&q=SELECT
 // };
 
 var projects = {
-  url: 'https://dmajka.carto.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM wetlands_1', /* This is the active query bringing projects in from CARTO */ /* NOTE: "wetlands_1" is unsynced w/ GLI, "wetlands" is SYNCED */
+  url: 'https://dmajka.carto.com/api/v2/sql?format=GeoJSON&q=SELECT * FROM wetlands_projects_jan182016', /* This is the active query bringing projects in from CARTO */ /* NOTE: "wetlands_1" is unsynced w/ GLI, "wetlands" is SYNCED */
   addToMap: 'yes',
   id: 'imdsprojects'
 };
