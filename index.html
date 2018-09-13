@@ -294,64 +294,64 @@
     </div>
 
 
-    <div class="project-card summary-card">
-      <h3>Wetlands Biological Integrity<sup>*</sup></h3>
-          <div class="graph-meta">
-            <ul class="list-inline" role="tablist">
-              <li><strong>Within map extent:</strong> 
-<!--               <li><strong>Show: </strong></li> -->
-<!--               <li class="active"><a href="#graph-funding-peryear-tab" role="tab" data-toggle="tab" on-click='graph-change' >Per Year</a></li> -->
-<!--               <li><a href="#graph-funding-cumul-tab" role="tab" data-toggle="tab" on-click='graph-change' >Cumulative</a></li> -->
-              <li>Avg IBI: {{findBy(derivedData.wetlandpts, 'ibi_class', 'Total', 'avg')}}</li> <!-- BTW this is causing severe lag under certain use patterns (I think it's this, anyway) & generates a weird JS error -->
-              <li>Coastal Wetlands: {{inputData.wetlandpts.markers.inBounds.length}}</li>
-            </ul>
-          </div>
+    <!--<div class="project-card summary-card">-->
+      <!--<h3>Wetlands Biological Integrity<sup>*</sup></h3>-->
+          <!--<div class="graph-meta">-->
+            <!--<ul class="list-inline" role="tablist">-->
+              <!--<li><strong>Within map extent:</strong> -->
+<!--&lt;!&ndash;               <li><strong>Show: </strong></li> &ndash;&gt;-->
+<!--&lt;!&ndash;               <li class="active"><a href="#graph-funding-peryear-tab" role="tab" data-toggle="tab" on-click='graph-change' >Per Year</a></li> &ndash;&gt;-->
+<!--&lt;!&ndash;               <li><a href="#graph-funding-cumul-tab" role="tab" data-toggle="tab" on-click='graph-change' >Cumulative</a></li> &ndash;&gt;-->
+              <!--<li>Avg IBI: {{findBy(derivedData.wetlandpts, 'ibi_class', 'Total', 'avg')}}</li> &lt;!&ndash; BTW this is causing severe lag under certain use patterns (I think it's this, anyway) & generates a weird JS error &ndash;&gt;-->
+              <!--<li>Coastal Wetlands: {{inputData.wetlandpts.markers.inBounds.length}}</li>-->
+            <!--</ul>-->
+          <!--</div>-->
 
-<!--       <p class="small">Should probably have a sentence or two explaining what IBI is and what the class names mean.</p> -->
+<!--&lt;!&ndash;       <p class="small">Should probably have a sentence or two explaining what IBI is and what the class names mean.</p> &ndash;&gt;-->
 
-        <div class="tab-content">
-          <div role="tabpanel" id="graph-integrity-peryear-tab" class="tab-pane graph-tab active">            
-            <h4>Acres within each class</h4>
-            <div id="graph-wetlands-ibi" class="chart  ct-major-twelfth"></div>
-              <div class="graph-overall-xaxis">
-                <span>Habitat Quality</span>
-              </div>
-			  <p class="small">
-				<em>* Data source: <a target="_blank" href="https://www.blueaccounting.org/link/great-lakes-coastal-wetlands-monitoring-program-data">Great Lakes Coastal Wetland Monitoring Program (GLCWMP).</a><br>
-				Vegetation IBIs measure the health of a coastal wetland based on plant assemblages. The vegetation IBI data, along with other indices of biological integrity (IBIs), have been gathered for
-				selected wetlands across the Great Lakes basin and are unrelated to projects funded by GLRI and other investments.<br>Wetlands with unknown IBI are not shown on graph -- see table for details.</em>
-			  </p>
+        <!--<div class="tab-content">-->
+          <!--<div role="tabpanel" id="graph-integrity-peryear-tab" class="tab-pane graph-tab active">            -->
+            <!--<h4>Acres within each class</h4>-->
+            <!--<div id="graph-wetlands-ibi" class="chart  ct-major-twelfth"></div>-->
+              <!--<div class="graph-overall-xaxis">-->
+                <!--<span>Habitat Quality</span>-->
+              <!--</div>-->
+			  <!--<p class="small">-->
+				<!--<em>* Data source: <a target="_blank" href="https://www.blueaccounting.org/link/great-lakes-coastal-wetlands-monitoring-program-data">Great Lakes Coastal Wetland Monitoring Program (GLCWMP).</a><br>-->
+				<!--Vegetation IBIs measure the health of a coastal wetland based on plant assemblages. The vegetation IBI data, along with other indices of biological integrity (IBIs), have been gathered for-->
+				<!--selected wetlands across the Great Lakes basin and are unrelated to projects funded by GLRI and other investments.<br>Wetlands with unknown IBI are not shown on graph &#45;&#45; see table for details.</em>-->
+			  <!--</p>-->
 
-          </div>
-        </div>
+          <!--</div>-->
+        <!--</div>-->
 
-        <a class="btn btn-xs btn-default btn-table" role="button" data-toggle="collapse" href="#integrity-table">
-          <i class="fa fa-table" aria-hidden="true"></i> Show table</a>
-        <div id="integrity-table" class="table-responsive collapse">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th># Wetlands</th>
-                <th>Avg Size (ac)</th>
-                <th>Total Acres</th>
-                <th>Avg IBI Score</th>                
-              </tr>
-            </thead>
-            <tbody>
-              {{#derivedData.wetlandpts:i}}
-                <tr>
-                <td>{{ibi_class}}</td>
-                <td>{{count}}</td>
-                <td>{{Math.round(wetland_avg)}}</td>
-                <td>{{acresSum}}</td>
-                <td>{{avg}}</td>
-                </tr>
-              {{/derivedData.wetlandpts}}
-            </tbody>
-          </table>
-        </div>
-    </div>
+        <!--<a class="btn btn-xs btn-default btn-table" role="button" data-toggle="collapse" href="#integrity-table">-->
+          <!--<i class="fa fa-table" aria-hidden="true"></i> Show table</a>-->
+        <!--<div id="integrity-table" class="table-responsive collapse">-->
+          <!--<table class="table table-striped">-->
+            <!--<thead>-->
+              <!--<tr>-->
+                <!--<th>Class</th>-->
+                <!--<th># Wetlands</th>-->
+                <!--<th>Avg Size (ac)</th>-->
+                <!--<th>Total Acres</th>-->
+                <!--<th>Avg IBI Score</th>                -->
+              <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+              <!--{{#derivedData.wetlandpts:i}}-->
+                <!--<tr>-->
+                <!--<td>{{ibi_class}}</td>-->
+                <!--<td>{{count}}</td>-->
+                <!--<td>{{Math.round(wetland_avg)}}</td>-->
+                <!--<td>{{acresSum}}</td>-->
+                <!--<td>{{avg}}</td>-->
+                <!--</tr>-->
+              <!--{{/derivedData.wetlandpts}}-->
+            <!--</tbody>-->
+          <!--</table>-->
+        <!--</div>-->
+    <!--</div>-->
 	
 	<!--<div class="project-card summary-card">
       <h3>Funding per Year<sup>*</sup></h3>
